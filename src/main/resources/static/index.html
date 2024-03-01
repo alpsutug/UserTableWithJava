@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h2>Data List</h2>
+<!-- Add Data button -->
+<div >
+    <button type="button" id="addDataBtn" onclick="openAddModal()"  >Add Person</button>
+
+</div>
+
+<table id="dataTable" border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Birth Date</th>
+        <th>Occupation</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <!-- Add this modal structure for adding data -->
+    <div id="addModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddModal()">&times;</span>
+            <h3 id="addcolordata">Add Data</h3>
+            <form id="addForm">
+                <label for="addName">Name:</label>
+                <input class="modal-input" type="text" id="addName" required>
+                <label for="addAge">Age:</label>
+                <input class="modal-input" type="text" id="addAge" required>
+                <label for="addBirthDate">Birth Date:</label>
+                <input class="modal-input" type="date" id="addBirthDate" required>
+                <label for="addOccupation">Occupation:</label>
+                <input class="modal-input" type="text" id="addOccupation" required>
+                <button type="button" onclick="addData()" id="addatacolor">Add Data</button>
+            </form>
+        </div>
+    </div>
+    <!-- Add this modal HTML structure to your existing HTML file -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <h3 id="editcolordata">Edit Data</h3>
+            <label for="editName">Name:</label>
+            <input class="modal-input" type="text" id="editName">
+            <label for="editAge">Age:</label>
+            <input class="modal-input" type="text" id="editAge">
+            <label for="editBirthDate">Birth Date:</label>
+            <input class="modal-input"  type="date" id="editBirthDate">
+            <label for="editOccupation">Occupation:</label>
+            <input class="modal-input" type="text" id="editOccupation">
+            <button onclick="saveChanges()" id="savecolor">Save Changes</button>
+        </div>
+    </div>
+
+
+    </tbody>
+</table>
+
+<script src="script.js"></script>
+</body>
+</html>
